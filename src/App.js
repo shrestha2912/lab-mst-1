@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 function App() {
 
@@ -8,14 +9,29 @@ function App() {
     setCount(count + 1);
   };
 
+  const resetNotification = () => {
+    setCount(0);
+  };
+
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className="container">
 
-      <h1>Total Notifications: {count}</h1>
+      <header className="header">
+        <h1> Notification System</h1>
+        <h2>Total Notifications: {count}</h2>
+      </header>
 
-      <button onClick={addNotification}>
-        Add Notification
-      </button>
+      <div className="buttons">
+
+        <button className="addBtn" onClick={addNotification}>
+          Add Notification
+        </button>
+
+        <button className="resetBtn" onClick={resetNotification}>
+          Reset
+        </button>
+
+      </div>
 
     </div>
   );
